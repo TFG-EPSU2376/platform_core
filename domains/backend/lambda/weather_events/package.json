@@ -1,0 +1,12 @@
+{
+  "name": "weather_events",
+  "version": "1.0.0",
+  "description": "Lambda function to fetch weather data",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf ./build.zip && npm install && zip -r build.zip ."
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}

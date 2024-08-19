@@ -1,0 +1,12 @@
+{
+  "name": "data_analyze_iot_rules",
+  "version": "1.0.0",
+  "description": "Lambda function to analyze IoT rules",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf ./build.zip && npm install && zip -r build.zip ."
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1000.0"
+  }
+}

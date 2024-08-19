@@ -1,0 +1,42 @@
+{
+  "RecipeFormatVersion": "2020-01-25",
+  "ComponentName": "com.example.mqttbridge",
+  "ComponentVersion": "1.0.0",
+  "ComponentDescription": "A component that bridges messages between AWS IoT Core and a local MQTT broker.",
+  "ComponentPublisher": "ExamplePublisher",
+  "ComponentConfiguration": {
+    "DefaultConfiguration": {
+      "mqtt": {
+        "clientId": "mqtt-bridge",
+        "host": "example-mqtt-broker.com",
+        "port": 1883,
+        "topicMappings": [
+          {
+            "sourceTopic": "source/topic",
+            "destinationTopic": "destination/topic"
+          }
+        ]
+      }
+    }
+  },
+  "Manifests": [
+    {
+      "Platform": {
+        "os": "linux"
+      },
+      "Lifecycle": {
+        "Install": {
+          "Script": "apt-get install -y mosquitto-clients"
+        },
+        "Run": {
+          "Script": "python3 -u {artifacts:path}/mqtt_bridge.py"
+        }
+      },
+      "Artifacts": [
+        {
+          "URI": "s3://your-bucket/path/to/mqtt_bridge.py"
+        }
+      ]
+    }
+  ]
+}

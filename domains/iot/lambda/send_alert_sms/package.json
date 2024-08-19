@@ -1,0 +1,13 @@
+{
+  "name": "send_alert_sms",
+  "version": "1.0.0",
+  "description": "Lambda function to receive MQTT data and save it to DynamoDB",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf ./build.zip && npm install && zip -r build.zip ."
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "aws-sdk": "^2.1000.0"
+  }
+}
